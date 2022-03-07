@@ -37,6 +37,7 @@ class User extends Model implements
         'name',
         'mobile',
         'email',
+        'otp',
         'remember_token',
         'password',
     ];
