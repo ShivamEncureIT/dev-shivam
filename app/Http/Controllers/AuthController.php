@@ -72,6 +72,7 @@ class AuthController extends Controller
 
         $data = $request->all();
         $random = \Str::random(40);
+        $data['otp'] = rand(100000, 999999);
         $data['remember_token'] = $random;
         // print_r ($data); die;
         $url = url('activtionlink/'.$random);
@@ -128,6 +129,7 @@ class AuthController extends Controller
         'name' => $data['name'],
         'mobile' => $data['mobile'],
         'email' => $data['email'],
+        'otp' => $data['otp'],
         'remember_token' => $data['remember_token'],
         'password' => Hash::make($data['password'])
       ]);
